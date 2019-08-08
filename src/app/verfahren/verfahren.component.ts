@@ -1,25 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Outlets } from './outlets';
+import { Outlets } from '../outlets';
 
 @Component({
-    selector: 'schir-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+    selector: 'schir-verfahren',
+    templateUrl: './verfahren.component.html',
+    styleUrls: ['./verfahren.component.scss']
 })
-export class AppComponent {
-    outlets = Outlets;
+export class VerfahrenComponent implements OnInit {
 
     constructor(
         private router: Router
     ) { }
 
-    goToVerfahren() {
+    ngOnInit() {
+    }
+
+    goToVorgang() {
         this.router.navigate([
             {
                 outlets: {
-                    [Outlets.Verfahren]: 'verfahrenId',
-                    [Outlets.Vorgaenge]: null,
+                    [Outlets.Vorgaenge]: 'vorgangId',
                     [Outlets.Verfuegungen]: null,
                     [Outlets.Aufgaben]: null,
                     [Outlets.Adressaten]: null,
